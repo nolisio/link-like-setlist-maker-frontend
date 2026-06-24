@@ -1,9 +1,5 @@
 import { NextResponse } from "next/server";
-
-const backendApiBaseUrl =
-  process.env.BACKEND_API_BASE_URL ??
-  process.env.NEXT_PUBLIC_BACKEND_API_BASE_URL ??
-  "http://127.0.0.1:3000";
+import { backendApiBaseUrl, createBackendHeaders } from "../backend";
 
 const unitDisplayNames: Record<string, string> = {
   "cerise-bouquet": "スリーズブーケ",
@@ -42,6 +38,7 @@ export async function GET() {
   try {
     const response = await fetch(`${backendApiBaseUrl}/api/songs`, {
       cache: "no-store",
+      headers: createBackendHeaders(),
     });
 
     const body = (await response.json()) as BackendSongsResponse | unknown;
