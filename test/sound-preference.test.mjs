@@ -122,11 +122,11 @@ test("stored sound volume falls back to the default and clamps writes", () => {
   assert.equal(readStoredSoundVolume(storage), 1);
 });
 
-test("stepSoundVolume adjusts volume in 10 percent increments", () => {
+test("stepSoundVolume adjusts volume in 5 percent increments", () => {
   const { stepSoundVolume } = loadSoundPreferenceModule();
 
-  assert.equal(stepSoundVolume(0.6, -1), 0.5);
-  assert.equal(stepSoundVolume(0.6, 1), 0.7);
+  assert.equal(stepSoundVolume(0.6, -1), 0.55);
+  assert.equal(stepSoundVolume(0.6, 1), 0.65);
   assert.equal(stepSoundVolume(0.05, -1), 0);
   assert.equal(stepSoundVolume(0.95, 1), 1);
 });

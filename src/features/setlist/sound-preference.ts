@@ -3,7 +3,7 @@ export const SOUND_PREFERENCE_STORAGE_KEY =
 export const SOUND_VOLUME_STORAGE_KEY =
   "link-like-setlist-maker:sound-volume";
 export const DEFAULT_SOUND_VOLUME = 0.1;
-export const SOUND_VOLUME_STEP = 0.1;
+export const SOUND_VOLUME_STEP = 0.05;
 
 export type SoundPreference = "enabled" | "disabled";
 export type SoundPreferenceSnapshot = {
